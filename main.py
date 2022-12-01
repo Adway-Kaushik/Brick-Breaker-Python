@@ -102,7 +102,7 @@ def draw(win, paddle, ball, bricks, lives):
     for brick in bricks:
         brick.draw(win)
 
-    lives_text = LIVES_FONT.render(f"Lives: {lives}", 1, "black")
+    lives_text = LIVES_FONT.render(f"Lives: {lives}", 1, "black")  # type: ignore
     win.blit(lives_text, (10, HEIGHT - lives_text.get_height() - 10))
 
     pygame.display.update()
@@ -167,7 +167,7 @@ def main():
         ball.y = paddle_y - BALL_RADIUS
 
     def display_text(text):
-        text_render = LIVES_FONT.render(text, 1, "red")
+        text_render = LIVES_FONT.render(text, 1, "red")  # type: ignore
         win.blit(text_render, (WIDTH/2 - text_render.get_width() /
                                2, HEIGHT/2 - text_render.get_height()/2))
         pygame.display.update()
